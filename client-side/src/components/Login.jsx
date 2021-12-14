@@ -1,7 +1,12 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
+import FacebookLogin from 'react-facebook-login';
 import "./login.scss";
+
+const responseFacebook = (response) => {
+  console.log(response);
+}
 
 export default function Login() {
   return (
@@ -28,7 +33,11 @@ export default function Login() {
           <hr />
         </div>
       </div>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <FacebookLogin
+    appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+    autoLoad={true}
+    fields="name,email,picture"
+    callback={responseFacebook} />
     </div>
   );
 }
