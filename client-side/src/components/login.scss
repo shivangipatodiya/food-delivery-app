@@ -1,5 +1,5 @@
 .login {
-  height: calc(100vh - 400px);
+  height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,3 +16,14 @@
   justify-content: space-between;
   width: 400px;
 }
+
+.link-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .buttons {
+//   font-family: sans-serif;
+//   font-size: 1em;
+//   font-weight: 1em;
+// }
