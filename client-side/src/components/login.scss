@@ -1,0 +1,18 @@
+.login {
+  height: calc(100vh - 400px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  width: 400px;
+}
+
+.login-seperator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
