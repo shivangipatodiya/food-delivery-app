@@ -15,6 +15,8 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   phone_number CHAR(10) NOT NULL,
+  google_id VARCHAR(255),
+  facebook_id VARCHAR(255),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp
 );
 
