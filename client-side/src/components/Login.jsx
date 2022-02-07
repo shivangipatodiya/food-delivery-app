@@ -6,7 +6,6 @@ import FacebookLogin from "react-facebook-login";
 import GoogleLogin from "react-google-login";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
-import axios from "axios";
 import "./login.scss";
 import { useState } from "react";
 
@@ -18,9 +17,9 @@ const responseGoogle = (response) => {
 };
 
 export default function Login() {
-  const [user, setUser] = useState({});
-  const onSubmit = () => {
-    console.log(this.state.val);
+  const [user, setUser] = useState({ email: "", password: "" });
+  const handleLogin = (e) => {
+    console.log(user)
   };
 
   return (
@@ -37,8 +36,8 @@ export default function Login() {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                value={this.state.val}
-                onChange={(e) => setUser({ val: e.target.value })}
+                value={user.email}
+                onChange={(e) => setUser({...user, email: e.target.value})}
               />
             </FloatingLabel>
             <FloatingLabel
@@ -49,15 +48,15 @@ export default function Login() {
               <Form.Control
                 type="password"
                 placeholder="Password"
-                value={this.state.val}
-                onChange={(e) => this.setUser.password({ val: e.target.value })}
+                value={user.password}
+                onChange={(e)=> setUser({...user, password: e.target.value})}
               />
             </FloatingLabel>
             <br />
             <Button
               className="login-input mb-2"
               variant="primary"
-              onClick={() => onSubmit()}
+              onClick={() => handleLogin()}
             >
               Login
             </Button>
