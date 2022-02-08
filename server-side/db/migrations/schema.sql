@@ -15,6 +15,8 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   phone_number CHAR(10) NOT NULL,
+  google_id VARCHAR(255),
+  facebook_id VARCHAR(255),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp
 );
 
@@ -56,7 +58,7 @@ CREATE TABLE carts (
   quantity INTEGER NOT NULL
 );
 
-CREATE TABLE deliveries (
+CREATE TABLE courier (
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
