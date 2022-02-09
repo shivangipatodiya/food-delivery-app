@@ -1,6 +1,6 @@
 import "./App.css";
 import Login from "./components/Login";
-import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import { useEffect, useState } from "react";
@@ -20,11 +20,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Switch>
           <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
-          </Switch>
         </Routes>
       </BrowserRouter>
     </>

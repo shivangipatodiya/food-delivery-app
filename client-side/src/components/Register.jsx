@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import FormGroup from "react-bootstrap/esm/FormGroup";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Register() {
   const [newUser, setNewUser] = useState({
@@ -14,9 +15,11 @@ export default function Register() {
     password: ""
   });
   let passwordRef;
-  const [error, setError] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
+  const createUser = async () => {
+    const user = await axios.post("/register", {...newUser})
+    }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +33,8 @@ export default function Register() {
     }
     else{
       setValidated(false)
-    }
+      createUser();
+    }   
     console.log("NEW USER", newUser);
   };
 
@@ -100,7 +104,7 @@ export default function Register() {
                 <Form.Control
                   required
                   type="email"
-                  placeholder="name@example.com"
+                  placeholder=""
                   value={newUser.email}
                   onChange={(e) =>
                     setNewUser({ ...newUser, email: e.target.value })
@@ -117,7 +121,7 @@ export default function Register() {
                 <Form.Control
                   required
                   type="password"
-                  placeholder="Password"
+                  placeholder=""
                   ref={passwordRef}
                   value={newUser.password}
                   onChange={(e) =>
@@ -135,7 +139,7 @@ export default function Register() {
                 <Form.Control
                   required
                   type="password"
-                  placeholder="Password"
+                  placeholder=""
                   value={confirmPassword}
                   isInvalid={
                     newUser.password !== confirmPassword
