@@ -18,7 +18,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
   const createUser = async () => {
-    const user = await axios.post("/register", {...newUser})
+    const user = await axios.post("/api/register", newUser)
     }
 
   const onSubmit = (e) => {
