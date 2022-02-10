@@ -1,9 +1,9 @@
 INSERT INTO users (first_name, last_name, email, password, phone_number)
-VALUES ('Harry', 'Potter', 'harry12@abc.com', 'password', '9876543210'),
-('Hermione', 'Granger', 'hermione1@abc.com', 'password', '9976543210'),
-('Ronald', 'Weasley', 'weasley2@abc.com', 'password', '9886543210'),
-('John', 'Doe', 'johndoe@abc.com', 'password', '9877543210'),
-('Jane', 'Doe', 'janedoe@abc.com', 'password', '9876643210');
+VALUES ('Harry', 'Potter', 'harry12@abc.com', '$2b$10$v91MD38dkLuCqMp028xlbu9SwcShJ9n8rAd0rl/4t.Q4m1Ewm79Kq', '9876543210'),
+('Hermione', 'Granger', 'hermione1@abc.com', '$2b$10$v91MD38dkLuCqMp028xlbu9SwcShJ9n8rAd0rl/4t.Q4m1Ewm79Kq', '9976543210'),
+('Ronald', 'Weasley', 'weasley2@abc.com', '$2b$10$v91MD38dkLuCqMp028xlbu9SwcShJ9n8rAd0rl/4t.Q4m1Ewm79Kq', '9886543210'),
+('John', 'Doe', 'johndoe@abc.com', '$2b$10$v91MD38dkLuCqMp028xlbu9SwcShJ9n8rAd0rl/4t.Q4m1Ewm79Kq', '9877543210'),
+('Jane', 'Doe', 'janedoe@abc.com', '$2b$10$v91MD38dkLuCqMp028xlbu9SwcShJ9n8rAd0rl/4t.Q4m1Ewm79Kq', '9876643210');
 
 INSERT INTO addresses (address_line1, address_line2, city, postal_code)
 VALUES ('Apt 008', '12 Henday Street', 'Edmonton', 'a7y3i9'),

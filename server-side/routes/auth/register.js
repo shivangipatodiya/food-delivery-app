@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const { User } = require("../../db/models");
-
-router.post("/register", async (req, res, next) => {
+const bcrypt = require("bcrypt");
+router.post("/", async (req, res, next) => {
   try {
     // expects {firstname, lastname, phonenumber, email, password} in req.body
-    const { firstname, lastname, phone_number, password, email } = req.body;
+    const { firstName, lastName, phoneNumber, password, email } = req.body;
 
-    if (!firstname || !lastname || !phone_number || !password || !email) {
+    if (!firstName || !lastName || !phoneNumber || !password || !email) {
       return res
         .status(400)
         .json({ error: "FirstName, LastName, PhoneNumber, Password, and Email required" });
@@ -17,14 +17,19 @@ router.post("/register", async (req, res, next) => {
         .status(400)
         .json({ error: "Password must be at least 6 characters" });
     }
-    req.body.password = bcrypt.hashSync(password, 10)
-    const user = await User.create(req.body);
+    const hashed = bcrypt.hashSync(password, 10)
+    console.log("PASSWORD IS __ ", hashed)
 
-    res.json(user);
+    const user = await User.create({firstname: firstName, lastname: lastName, phone_number: phoneNumber, email, password: hashed});
+
+    res.json({
+      ...user.dataValues
+    });
   } catch (error) {
     if (error.name === "SequelizeUniqueConstraintError") {
       return res.status(401).json({ error: "User already exists" });
     } else if (error.name === "SequelizeValidationError") {
+      console.log("err", error)
       return res.status(401).json({ error: "Validation error" });
     } else next(error);
   }

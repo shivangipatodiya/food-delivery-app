@@ -5,6 +5,11 @@ const app = express();
 const port = 3546;
 
 const bodyParser = require("body-parser");
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({

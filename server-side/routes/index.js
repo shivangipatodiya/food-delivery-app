@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-// router.use("/messages", require("./messages"));
+router.use("/login", require("./auth/login"));
 router.use("/register", require("./auth/register"));
 router.use("/user", require("./user"));
 

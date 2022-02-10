@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import "./login.scss";
 import { useState } from "react";
+import axios from "axios";
 
 const responseFacebook = (response) => {
   console.log(response);
@@ -18,8 +19,13 @@ const responseGoogle = (response) => {
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
+  const checkUser = async () => {
+    const userData = await axios.post("/api/login", user)
+    }
+
   const handleLogin = (e) => {
-    console.log(user)
+    console.log("USER++++++", user)
+    checkUser();
   };
 
   return (
