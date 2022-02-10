@@ -35,12 +35,12 @@ VALUES ('uuid1', 1, 1),
 ('uuid1', 5, 1),
 ('uuid2', 2, 1);
 
-INSERT INTO deliveries (first_name, last_name, email, password, phone_number)
+INSERT INTO couriers (first_name, last_name, email, password, phone_number)
 VALUES ('Alex', 'Davidson', 'alex@abc.com', 'password', '8976357835'),
 ('Jenny', 'Gump', 'jenny12@abc.com', 'password', '8570537835'),
 ('Alex', 'Davidson', 'alex@abc.com', 'password', '7976357999');
 
-INSERT INTO orders (id, restaurant_id, dish_id, dish_quantity, price, delivery_id) 
+INSERT INTO orders (id, restaurant_id, dish_id, dish_quantity, price, courier_id) 
 VALUES ('uuid01', 5, 1, 1, 15, 1),
 ('uuid01', 5, 5, 1, 8, 1),
 ('uuid02', 4, 4, 3, 19.5, 2);

@@ -1,11 +1,17 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const Dish = db.define("dish", {
+const Cart = db.define("cart", {
+  uuid: {
+    field: "id",
+    type: Sequelize.DataTypes.UUID,
+    primaryKey: true,
+    allowNull: false
+  },
   quantity: {
     type: Sequelize.INTEGER,
     allowNull: false
   }
 });
 
-module.exports = Dish;
+module.exports = Cart;

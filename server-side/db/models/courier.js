@@ -3,12 +3,18 @@ const db = require("../db");
 
 const Courier = db.define("courier", {
   firstname: {
+    field: "first_name",
     type: Sequelize.STRING,
     allowNull: false
   },
   lastname: {
+    field: "last_name",
     type: Sequelize.STRING,
     allowNull: false
+  },
+  phone_number: {
+    type: Sequelize.STRING,
+    alloWNull: false
   },
   email: {
     type: Sequelize.STRING,
@@ -23,49 +29,17 @@ const Courier = db.define("courier", {
     validate: {
       min: 6
     },
-    allowNull: false,
-    get() {
-      return () => this.getDataValue("password");
-    }
+    allowNull: false
   },
-  salt: {
-    type: Sequelize.STRING,
-    get() {
-      return () => this.getDataValue("salt");
-    }
+  createdAt: {
+    field: "created_at",
+    type: Sequelize.DATE
+  },
+  updatedAt: {
+    field: "updated_at",
+    type: Sequelize.DATE
   }
 });
 
-Courier.prototype.correctPassword = function (password) {
-  return Courier.encryptPassword(password, this.salt()) === this.password();
-};
-
-Courier.createSalt = function () {
-  return crypto.randomBytes(16).toString("base64");
-};
-
-Courier.encryptPassword = function (plainPassword, salt) {
-  return crypto
-    .createHash("RSA-SHA256")
-    .update(plainPassword)
-    .update(salt)
-    .digest("hex");
-};
-
-const setSaltAndPassword = (courier) => {
-  if (courier.changed("password")) {
-    courier.salt = Courier.createSalt();
-    courier.password = Courier.encryptPassword(
-      courier.password(),
-      courier.salt()
-    );
-  }
-};
-
-Courier.beforeCreate(setSaltAndPassword);
-Courier.beforeUpdate(setSaltAndPassword);
-Courier.beforeBulkCreate((couriers) => {
-  couriers.forEach(setSaltAndPassword);
-});
 
 module.exports = Courier;
