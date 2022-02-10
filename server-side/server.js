@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
   res.send("Hungry! Order some food...");
 });
 
-// app.use("/api", require("./routes"));
+app.use("/api", require("./routes"));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

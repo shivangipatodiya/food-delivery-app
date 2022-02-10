@@ -9,6 +9,14 @@ const Order = db.define("order", {
   price: {
     type: Sequelize.FLOAT,
     allowNull: false
+  },
+  createdAt: {
+    field: "created_at",
+    type: Sequelize.DATE
+  },
+  updatedAt: {
+    field: "updated_at",
+    type: Sequelize.DATE
   }
 });
 

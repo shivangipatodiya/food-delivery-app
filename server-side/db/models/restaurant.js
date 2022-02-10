@@ -17,6 +17,14 @@ const Restaurant = db.define("restaurant", {
   postal_code: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  createdAt: {
+    field: "created_at",
+    type: Sequelize.DATE
+  },
+  updatedAt: {
+    field: "updated_at",
+    type: Sequelize.DATE
   }
 });
 
