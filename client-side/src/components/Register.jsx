@@ -18,23 +18,27 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
   const createUser = async () => {
-    const user = await axios.post("/api/register", newUser)
+    try {
+      const data = await axios.post("/api/register", newUser);
+      localStorage.setItem("session-token", data.token);
+    } catch (e) {
+      console.log(e);
     }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (newUser.password !== confirmPassword) {
-      setValidated(true)
+      setValidated(true);
       return;
     }
-    if(Object.values(newUser).includes("")){
-      setValidated(true)
+    if (Object.values(newUser).includes("")) {
+      setValidated(true);
       return;
-    }
-    else{
-      setValidated(false)
+    } else {
+      setValidated(false);
       createUser();
-    }   
+    }
     console.log("NEW USER", newUser);
   };
 
@@ -141,14 +145,14 @@ export default function Register() {
                   type="password"
                   placeholder=""
                   value={confirmPassword}
-                  isInvalid={
-                    newUser.password !== confirmPassword
-                  }
+                  isInvalid={newUser.password !== confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                {newUser.password !== confirmPassword && <Form.Control.Feedback type="invalid">
-                  Password mismatch!
-                </Form.Control.Feedback>}
+                {newUser.password !== confirmPassword && (
+                  <Form.Control.Feedback type="invalid">
+                    Password mismatch!
+                  </Form.Control.Feedback>
+                )}
               </FloatingLabel>
             </FormGroup>
             <br />

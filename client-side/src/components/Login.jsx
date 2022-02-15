@@ -20,9 +20,14 @@ const responseGoogle = (response) => {
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const checkUser = async () => {
-    const userData = await axios.post("/api/login", user)
+    try {
+    const {data} = await axios.post("/api/login", user);
+    localStorage.setItem("session-token", data.token);
     }
-
+    catch(e){
+      console.log(e)
+    }
+  }
   const handleLogin = (e) => {
     console.log("USER++++++", user)
     checkUser();
