@@ -4,9 +4,11 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import FormGroup from "react-bootstrap/esm/FormGroup";
 import { useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import apiHelpers from "../helpers/apiHelpers";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
@@ -17,24 +19,27 @@ export default function Register() {
   let passwordRef;
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
-  const createUser = async () => {
-    const user = await axios.post("/api/register", newUser)
-    }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (newUser.password !== confirmPassword) {
-      setValidated(true)
+      setValidated(true);
       return;
     }
-    if(Object.values(newUser).includes("")){
-      setValidated(true)
+    if (Object.values(newUser).includes("")) {
+      setValidated(true);
       return;
+    } else {
+      try {
+        setValidated(false);
+        const data = await apiHelpers.register(newUser);
+        localStorage.setItem("session-token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        navigate("/");
+      } catch (e) {
+        console.log(e);
+      }
     }
-    else{
-      setValidated(false)
-      createUser();
-    }   
     console.log("NEW USER", newUser);
   };
 
@@ -141,14 +146,14 @@ export default function Register() {
                   type="password"
                   placeholder=""
                   value={confirmPassword}
-                  isInvalid={
-                    newUser.password !== confirmPassword
-                  }
+                  isInvalid={newUser.password !== confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                {newUser.password !== confirmPassword && <Form.Control.Feedback type="invalid">
-                  Password mismatch!
-                </Form.Control.Feedback>}
+                {newUser.password !== confirmPassword && (
+                  <Form.Control.Feedback type="invalid">
+                    Password mismatch!
+                  </Form.Control.Feedback>
+                )}
               </FloatingLabel>
             </FormGroup>
             <br />
