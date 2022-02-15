@@ -9,6 +9,8 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import "./login.scss";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate, Navigate } from "react-router-dom";
+import apiHelpers from "../helpers/apiHelpers";
 
 const responseFacebook = (response) => {
   console.log(response);
@@ -19,18 +21,22 @@ const responseGoogle = (response) => {
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
-  const checkUser = async () => {
-    try {
-    const {data} = await axios.post("/api/login", user);
-    localStorage.setItem("session-token", data.token);
-    }
-    catch(e){
-      console.log(e)
-    }
+  const navigate = useNavigate();
+  const token = localStorage.getItem("session-token");
+  if (token) {
+    return <Navigate to="/" />;
   }
-  const handleLogin = (e) => {
-    console.log("USER++++++", user)
-    checkUser();
+
+  const handleLogin = async (e) => {
+    console.log("USER++++++", user);
+    try {
+      const data = await apiHelpers.login(user);
+      localStorage.setItem("session-token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      navigate("/");
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -48,7 +54,7 @@ export default function Login() {
                 type="email"
                 placeholder="name@example.com"
                 value={user.email}
-                onChange={(e) => setUser({...user, email: e.target.value})}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
             </FloatingLabel>
             <FloatingLabel
@@ -60,7 +66,7 @@ export default function Login() {
                 type="password"
                 placeholder="Password"
                 value={user.password}
-                onChange={(e)=> setUser({...user, password: e.target.value})}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
             </FloatingLabel>
             <br />

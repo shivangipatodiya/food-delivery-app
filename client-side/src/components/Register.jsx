@@ -4,9 +4,11 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import FormGroup from "react-bootstrap/esm/FormGroup";
 import { useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import apiHelpers from "../helpers/apiHelpers";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
@@ -17,16 +19,8 @@ export default function Register() {
   let passwordRef;
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
-  const createUser = async () => {
-    try {
-      const data = await axios.post("/api/register", newUser);
-      localStorage.setItem("session-token", data.token);
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (newUser.password !== confirmPassword) {
       setValidated(true);
@@ -36,8 +30,15 @@ export default function Register() {
       setValidated(true);
       return;
     } else {
-      setValidated(false);
-      createUser();
+      try {
+        setValidated(false);
+        const data = await apiHelpers.register(newUser);
+        localStorage.setItem("session-token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        navigate("/");
+      } catch (e) {
+        console.log(e);
+      }
     }
     console.log("NEW USER", newUser);
   };

@@ -30,6 +30,11 @@ router.post("/", async (req, res, next) => {
         expiresIn: 86400
       });
       res.json({
+        user: {
+          firstname: user.firstname,
+          lastname: user.lastname,
+          email: user.email
+        },
         token
       });
     }

@@ -44,3 +44,6 @@ INSERT INTO orders (id, restaurant_id, dish_id, dish_quantity, price, courier_id
 VALUES ('uuid01', 5, 1, 1, 15, 1),
 ('uuid01', 5, 5, 1, 8, 1),
 ('uuid02', 4, 4, 3, 19.5, 2);
+
+-- `\i server-side/db/migrations/schema.sql`
+-- \i server-side/db/seeds/01_seeds.sql
