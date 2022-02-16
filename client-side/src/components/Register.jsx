@@ -6,6 +6,7 @@ import FormGroup from "react-bootstrap/esm/FormGroup";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiHelpers from "../helpers/apiHelpers";
+import "./login.scss";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ export default function Register() {
   };
 
   return (
-    <div>
+    <div className="login">
       <Card>
         <Card.Body>
           <h2 className="mb-3">Signup</h2>

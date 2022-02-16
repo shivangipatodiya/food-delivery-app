@@ -8,16 +8,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import "./login.scss";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate, Navigate } from "react-router-dom";
 import apiHelpers from "../helpers/apiHelpers";
 
-const responseFacebook = (response) => {
+const response = (response) => {
   console.log(response);
 };
-const responseGoogle = (response) => {
-  console.log(response);
-};
+// const responseGoogle = (response) => {
+//   console.log(response);
+//    return {profile: response.profileObj, tokenId: response.tokenId}
+// };
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -27,12 +27,12 @@ export default function Login() {
     return <Navigate to="/" />;
   }
 
-  const handleLogin = async (e) => {
-    console.log("USER++++++", user);
+  const handleLogin = async (data, type) => {
+    console.log("Data++++++", data);
     try {
-      const data = await apiHelpers.login(user);
-      localStorage.setItem("session-token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      const response = await apiHelpers.login(data, type);
+      localStorage.setItem("session-token", response.token);
+      localStorage.setItem("user", JSON.stringify(response.user));
       navigate("/");
     } catch (e) {
       console.log(e);
@@ -73,7 +73,7 @@ export default function Login() {
             <Button
               className="login-input mb-2"
               variant="primary"
-              onClick={() => handleLogin()}
+              onClick={() => handleLogin(user, "direct")}
             >
               Login
             </Button>
@@ -109,8 +109,8 @@ export default function Login() {
           <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
             buttonText=""
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            onSuccess={(googRes) => handleLogin({profile: googRes.profileObj, tokenId: googRes.tokenId}, "google")}
+            onFailure={response}
             cookiePolicy={"single_host_origin"}
             render={(renderProps) => (
               <button
@@ -152,7 +152,7 @@ export default function Login() {
             containerStyle=""
             appId={process.env.REACT_APP_FACEBOOK_APP_ID}
             fields="name,email,picture"
-            callback={responseFacebook}
+            callback={(fbRes) => handleLogin(fbRes, "fb")}
             textButton=""
             icon={
               <FontAwesomeIcon

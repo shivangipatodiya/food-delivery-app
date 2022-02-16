@@ -5,8 +5,8 @@ const apiHelpers = {
     const response = await axios.post("/api/register", newUser);
     return response.data;
   },
-  async login(data) {
-    const response = await axios.post("/api/login", data);
+  async login(data, type) {
+    const response = await axios.post("/api/login", {data, type});
     return response.data;
   },
   async logout() {

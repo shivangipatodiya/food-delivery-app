@@ -14,7 +14,7 @@ const User = db.define("user", {
   },
   phone_number: {
     type: Sequelize.STRING,
-    alloWNull: false
+    alloWNull: true
   },
   google_id: {
     type: Sequelize.STRING,
@@ -39,7 +39,7 @@ const User = db.define("user", {
     validate: {
       min: 6
     },
-    allowNull: false,
+    allowNull: true,
   },
   createdAt: {
     field: "created_at",
