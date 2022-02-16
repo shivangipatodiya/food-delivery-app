@@ -166,6 +166,20 @@ export default function Register() {
               Signup
             </Button>
           </Form>
+          <div
+          style={{
+            textAlign: "center"
+          }}
+        >
+            <div>Already a user?</div>
+            <Button
+              variant="link"
+              className="p-0"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

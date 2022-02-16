@@ -17,12 +17,12 @@ const User = db.define("user", {
     alloWNull: true
   },
   google_id: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     unique: true,
     allowNull: true
   },
   facebook_id: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     unique: true,
     allowNull: true
   },

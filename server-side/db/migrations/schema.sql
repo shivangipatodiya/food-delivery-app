@@ -15,8 +15,8 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255),
   phone_number CHAR(10),
-  google_id VARCHAR(255),
-  facebook_id VARCHAR(255),
+  google_id TEXT,
+  facebook_id TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp
 );
@@ -87,7 +87,7 @@ CREATE TABLE orders (
   price INTEGER NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
-  courier_id INTEGER REFERENCES couriers(id) ON DELETE CASCADE,
+  courier_id INTEGER REFERENCES couriers(id),
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
