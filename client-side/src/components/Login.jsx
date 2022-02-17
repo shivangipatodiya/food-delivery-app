@@ -82,7 +82,7 @@ export default function Login() {
                 >
                   Signup
                 </Button>
-                <Button variant="link" className="p-0">
+                <Button variant="link" className="p-0" onClick={() => navigate("/forgotpassword")}>
                   Forgot Password
                 </Button>
               </div>

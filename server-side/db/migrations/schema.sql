@@ -17,6 +17,7 @@ CREATE TABLE users (
   phone_number CHAR(10),
   google_id TEXT,
   facebook_id TEXT,
+  reset_link TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp
 );

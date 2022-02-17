@@ -41,6 +41,11 @@ const User = db.define("user", {
     },
     allowNull: true,
   },
+  resetLink: {
+    field: "reset_link",
+    type:Sequelize.TEXT,
+    default:""
+  },
   createdAt: {
     field: "created_at",
     type: Sequelize.DATE
