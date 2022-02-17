@@ -2,6 +2,7 @@ import "./App.css";
 import Login from "./components/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/Register";
+import ForgotPassword from "./components/ForgotPassword";
 import PrivateRoute from "./PrivateRoute";
 import Home from "./components/Home";
 // import { useEffect, useState } from "react";
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
         </Routes>
       </BrowserRouter>

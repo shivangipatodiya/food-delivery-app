@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 router.use("/login", require("./auth/login"));
+router.use("/reset", require("./auth/passwordReset"));
 router.use("/register", require("./auth/register"));
 router.use("/user", require("./user"));
 

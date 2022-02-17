@@ -17,12 +17,12 @@ const User = db.define("user", {
     alloWNull: true
   },
   google_id: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     unique: true,
     allowNull: true
   },
   facebook_id: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     unique: true,
     allowNull: true
   },
@@ -40,6 +40,11 @@ const User = db.define("user", {
       min: 6
     },
     allowNull: true,
+  },
+  resetLink: {
+    field: "reset_link",
+    type:Sequelize.TEXT,
+    default:""
   },
   createdAt: {
     field: "created_at",
