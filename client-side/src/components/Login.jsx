@@ -27,6 +27,7 @@ export default function Login() {
       const response = await apiHelpers.login(data, type);
       localStorage.setItem("session-token", response.token);
       localStorage.setItem("user", JSON.stringify(response.user));
+      setError("");
       navigate("/");
     } catch (e) {
       console.log("ERREOR LOGIN", e.response.data.error);

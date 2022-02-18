@@ -9,8 +9,12 @@ const apiHelpers = {
     const response = await axios.post("/api/login", {data, type});
     return response.data;
   },
-  async resetPassword(email) {
-    const response = await axios.post("/api/reset", {email});
+  async askReset(email) {
+    const response = await axios.post("/api/forgot-password", {email});
+    return response.data;
+  },
+  async reset(data) {
+    const response = await axios.put("/api/reset", data);
     return response.data;
   },
   async logout() {
