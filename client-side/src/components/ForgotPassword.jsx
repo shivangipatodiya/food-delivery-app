@@ -6,12 +6,13 @@ import Card from "react-bootstrap/Card";
 import "./login.scss";
 import { useState } from "react";
 import apiHelpers from "../helpers/apiHelpers";
+import { useNavigate } from "react-router-dom";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
-
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     console.log("Email++++++", email);
@@ -19,7 +20,7 @@ export default function ForgotPassword() {
       const response = await apiHelpers.askReset(email);
       console.log("FOPA",response.message);
       setMessage(response.message)
-      setError("");
+      setError("")
     } catch (e) {
       console.log("ERREOR LOGIN", e.response.data.error);
       setError(e.response.data.error);
@@ -28,7 +29,7 @@ export default function ForgotPassword() {
   };
   return (
     <div>
-      <div className="login">
+      <div className="auth">
         <Card>
           <Card.Body>
           {message && <Alert variant="info">{message}</Alert>}
@@ -52,9 +53,15 @@ export default function ForgotPassword() {
               className="login-input mb-2"
               variant="primary"
               onClick={handleSubmit}
+              disabled={!!message}
             >
               Submit
             </Button>
+            <div className="align-center">
+            <Button variant="link" className="p-0" onClick={() => navigate("/login")}>
+                  Login
+                </Button>
+                </div>
           </Card.Body>
         </Card>
       </div>

@@ -36,14 +36,14 @@ export default function Login() {
       setError(e.response.data.error);
     }
   }
-  
+  console.log(error)
     return (
       <div>
-        <div className="login">
+        <div className="auth">
           <Card>
-          {state && <Alert variant="info">{state.success}</Alert>}
+          {state && <Alert className="login-input" variant="info">{state.success}</Alert>}
             <Card.Body>
-              {error && (<Alert variant="danger">{error}</Alert>)}
+              {error && (<Alert className="login-input" variant="danger">{error}</Alert>)}
               <h2 className="mb-3">Login</h2>
               <FloatingLabel
                 controlId="floatingInput"

@@ -51,7 +51,7 @@ const loginType = async (body) => {
         error: `User with email ${user.email} previously logged in through google or facebook.`
       });
       throw new Error(
-        `User with email ${user.email} previously logged in through google or facebook.`
+        `User with this email previously logged in through google or facebook.`
       );
     }
     if (!bcrypt.compareSync(body.data.password, user.password)) {
