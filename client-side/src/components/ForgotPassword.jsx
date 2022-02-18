@@ -10,16 +10,20 @@ import apiHelpers from "../helpers/apiHelpers";
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
 
   const handleSubmit = async () => {
     console.log("Email++++++", email);
     try {
-      const response = await apiHelpers.resetPassword(email);
-      console.log("FOPA",response)
+      const response = await apiHelpers.askReset(email);
+      console.log("FOPA",response.message);
+      setMessage(response.message)
+      setError("");
     } catch (e) {
       console.log("ERREOR LOGIN", e.response.data.error);
       setError(e.response.data.error);
+      setMessage("");
     }
   };
   return (
@@ -27,6 +31,7 @@ export default function ForgotPassword() {
       <div className="login">
         <Card>
           <Card.Body>
+          {message && <Alert variant="info">{message}</Alert>}
             {error && <Alert variant="danger">{error}</Alert>}
             <h2 className="mb-3">Reset Password</h2>
             <FloatingLabel
