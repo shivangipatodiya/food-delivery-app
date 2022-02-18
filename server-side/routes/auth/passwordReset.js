@@ -9,6 +9,7 @@ router.put("/", async (req, res, next) => {
     const hashed = bcrypt.hashSync(password, 10);
     const user = await User.findOne({ where: { resetLink: token } });
     user.password = hashed;
+    user.resetLink = "";
     await user.save();
     res.json({passwordChanged: true});
   } catch (error) {

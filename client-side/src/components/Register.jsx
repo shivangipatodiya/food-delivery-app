@@ -1,6 +1,7 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import FormGroup from "react-bootstrap/esm/FormGroup";
 import { useState } from "react";
@@ -20,6 +21,7 @@ export default function Register() {
   let passwordRef;
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
+  const [error, setError] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -34,19 +36,25 @@ export default function Register() {
       try {
         setValidated(false);
         const data = await apiHelpers.register(newUser);
-        localStorage.setItem("session-token", data.token);
+        if (data) {
+          setError("");
+          localStorage.setItem("session-token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
         navigate("/");
+        }
+        
       } catch (e) {
-        console.log(e);
+        console.log(e.response.data.error);
+        setError(e.response.data.error);
       }
     }
     console.log("NEW USER", newUser);
   };
 
   return (
-    <div className="login">
+    <div className="auth">
       <Card>
+      {error && (<Alert variant="danger">{error}</Alert>)}
         <Card.Body>
           <h2 className="mb-3">Signup</h2>
           <Form noValidate validated={validated} onSubmit={onSubmit}>

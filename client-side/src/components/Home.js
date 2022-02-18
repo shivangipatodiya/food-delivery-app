@@ -4,13 +4,15 @@ import Button from "react-bootstrap/Button";
 
 export default function Home(props) {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user)
   const handleLogout = async () => {
     localStorage.removeItem("session-token");
     localStorage.removeItem("user");
     navigate("/login");
   }
   return (<>
-  <div>Hello </div>
+  <div>Hello {user.firstname}</div>
   <Button onClick={handleLogout}>
         Logout
       </Button>
