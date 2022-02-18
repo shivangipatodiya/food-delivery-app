@@ -9,13 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import "./login.scss";
 import { useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, useLocation } from "react-router-dom";
 import apiHelpers from "../helpers/apiHelpers";
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { state } = useLocation();
+  console.log("STATE",state);
   const token = localStorage.getItem("session-token");
   if (token) {
     return <Navigate to="/" />;
@@ -34,10 +36,12 @@ export default function Login() {
       setError(e.response.data.error);
     }
   }
+  
     return (
       <div>
         <div className="login">
           <Card>
+          {state && <Alert variant="info">{state.success}</Alert>}
             <Card.Body>
               {error && (<Alert variant="danger">{error}</Alert>)}
               <h2 className="mb-3">Login</h2>

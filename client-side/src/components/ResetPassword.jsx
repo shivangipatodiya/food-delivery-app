@@ -1,7 +1,6 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Toast from "react-bootstrap/Toast";
 import Card from "react-bootstrap/Card";
 import FormGroup from "react-bootstrap/esm/FormGroup";
 import { useState } from "react";
@@ -16,7 +15,7 @@ export default function ResetPassword() {
   let passwordRef;
   const [confirmPassword, setConfirmPassword] = useState("");
   const [validated, setValidated] = useState(false);
-  const [toast, setToast] = useState(false);
+  
 
   const onSubmit = async (e) => {
     console.log(password)
@@ -30,8 +29,7 @@ export default function ResetPassword() {
       setValidated(false);
       const passwordChanged = await apiHelpers.reset({ password, token });
       if (passwordChanged) {
-        setToast(true);
-        navigate("/login");
+        navigate("/login", {state: {success: "Password updated successfully"}});
       }
     } catch (e) {
       console.log(e);
@@ -39,20 +37,6 @@ export default function ResetPassword() {
   };
   return (
     <div>
-      {toast && (
-        <Toast>
-          <Toast.Header>
-            <img
-              src="holder.js/20x20?text=%20"
-              className="rounded me-2"
-              alt=""
-            />
-            <strong className="me-auto">Success</strong>
-            <small>11 mins ago</small>
-          </Toast.Header>
-          <Toast.Body>Password updated successfully</Toast.Body>
-        </Toast>
-      )}
       <Card>
         <Card.Body>
           <h2 className="mb-3">Password Reset</h2>
