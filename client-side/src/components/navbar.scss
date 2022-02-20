@@ -2,6 +2,7 @@
   display:flex;
   justify-content: space-between;
   // position: fixed;
+	align-items: center;
 	top: 0;
 	left: 0;
   border-bottom: 2px solid #eff2f5;;
@@ -18,4 +19,12 @@
 .user {
   display:flex;
   justify-content: space-between;
+	align-items: center;
+}
+.input {
+  width: 600px;
+	
+}
+.spacer {
+	margin-left: 1rem;
 }
