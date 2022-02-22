@@ -19,6 +19,10 @@ const apiHelpers = {
   },
   async logout() {
     await axios.delete("/api/logout");
+  },
+  async getRestaurants() {
+    const response = await axios.get("/api/restaurants");
+    return response.data;
   }
 };
 

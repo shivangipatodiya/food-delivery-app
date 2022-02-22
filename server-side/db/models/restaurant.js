@@ -2,6 +2,15 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 
 const Restaurant = db.define("restaurant", {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  imageUrl: {
+    field: "image_url",
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   address_line1: {
     type: Sequelize.STRING,
     allowNull: false

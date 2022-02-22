@@ -15,12 +15,12 @@ VALUES ('Apt 008', '12 Henday Street', 'Edmonton', 'a7y3i9'),
 INSERT INTO user_addresses (user_id, address_id)
 VALUES(1, 1), (1, 5), (2, 5), (4, 4);
 
-INSERT INTO restaurants (name, address_line1, address_line2, city, postal_code)
-VALUES ('Leela''s Roti', '23412','Davidson Road W', 'Edmonton', 'a7y3i8'),
-('Savoy', '418','Hillcreek Road', 'Toronto', 't4f6k9'),
-('Domino''s', '9812','Jasper Ave', 'Mississauga', 'l5b0g3'),
-('Royal Paan', '2232','Anton Street', 'Vancouver', 'v3u6r1'),
-('Earl''s', '212','Buckley Dr', 'St. John''s', 'l4h2v5');
+INSERT INTO restaurants (name, image_url, address_line1, address_line2, city, postal_code)
+VALUES ('Leela''s Roti', 'http://leelasroti.com/images/gl_8.jpg', '23412','Davidson Road W', 'Edmonton', 'a7y3i8'),
+('Savoy', 'https://savoys.ca/wp-content/uploads/2020/02/Savaoys-South-Indian-Kitchen-Logo-Web-big-1.png', '418','Hillcreek Road', 'Toronto', 't4f6k9'),
+('Domino''s', 'https://imageio.forbes.com/specials-images/imageserve/60fa947d0528dafad08ea197/Domino-s-Pizza/960x0.jpg?fit=bounds&format=jpg&width=960', '9812','Jasper Ave', 'Mississauga', 'l5b0g3'),
+('Royal Paan', 'https://royalpaan.com/wp-content/uploads/2020/12/cropped-Royal-paan.png', '2232','Anton Street', 'Vancouver', 'v3u6r1'),
+('Earl''s', 'https://www.wem.ca/media/2711/earls-weblogo.png', '212','Buckley Dr', 'St. John''s', 'l4h2v5');
 
 
 INSERT INTO dishes (name, description, price, restaurant_id)
