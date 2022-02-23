@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import apiHelpers from "../helpers/apiHelpers";
 import RestaurantListItem from "./RestaurantListItem";
+import Row from 'react-bootstrap/Row';
+import './restaurantListItem.scss';
 
 export default function RestaurantList(props) {
   const [restaurants, setRestaurants] = useState([]);
@@ -17,7 +19,7 @@ export default function RestaurantList(props) {
   }, []);
 
   return (
-    <>
+    <Row md={4}>
       {restaurants.map((restaurant) => {
         return (
           <RestaurantListItem
@@ -32,6 +34,7 @@ export default function RestaurantList(props) {
           />
         );
       })}
-    </>
+    </Row>
+    
   );
 }

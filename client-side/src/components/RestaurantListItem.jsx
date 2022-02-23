@@ -1,15 +1,14 @@
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import './restaurantListItem.scss'
 
 export default function RestaurantListItem(props) {
-  const columnsPerRow = 4;
+  
   return (
-    <Col>
-      <Card>
+    
+      <Card className="card" border="light">
         <Card.Body>
           <h2>{props.name}</h2>
-          <img
+          <img className="image"
             height="150px"
             src={props.image ? props.image : ""}
             alt={props.name}
@@ -20,6 +19,6 @@ export default function RestaurantListItem(props) {
           </p>
         </Card.Body>
       </Card>
-    </Col>
+    
   );
 }
