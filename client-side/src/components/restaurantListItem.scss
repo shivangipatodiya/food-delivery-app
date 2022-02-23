@@ -1,0 +1,19 @@
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  margin: 12px;
+  text-align: center;
+  -webkit-box-shadow: -2px 2px 53px -34px rgba(0,0,0,0.44);
+  -moz-box-shadow: -2px 2px 53px -34px rgba(0,0,0,0.44);
+  box-shadow: -2px 2px 53px -34px rgba(0,0,0,0.44);
+
+}
+col {
+  padding: 12px;
+}
+
+.image {
+  text-align: center;
+}

@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import "./navbar.scss";
 import { useNavigate } from "react-router-dom";
+import SelectAddress from "./SelectAddress";
 
 export default function Navbar(props) {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -37,7 +38,7 @@ export default function Navbar(props) {
             }
             id="button-addon1"
           >
-            <Dropdown.Item >Select address</Dropdown.Item>
+            <Dropdown.Item ><SelectAddress /></Dropdown.Item>
             <Dropdown.Item >Add address</Dropdown.Item>
           </DropdownButton>
         </div>

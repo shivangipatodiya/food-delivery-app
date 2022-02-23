@@ -5,6 +5,7 @@ router.use("/forgot-password", require("./auth/forgotPassword"));
 router.use("/reset", require("./auth/passwordReset"));
 router.use("/register", require("./auth/register"));
 router.use("/user", require("./user"));
+router.use("/restaurants", require("./restaurants"))
 
 router.use((req, res, next) => {
   const error = new Error("Not Found");

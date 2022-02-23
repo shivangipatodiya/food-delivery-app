@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-
+import RestaurantList from "./RestaurantList";
 export default function Home(props) {
   
   const user = JSON.parse(localStorage.getItem("user"));
@@ -7,5 +7,6 @@ export default function Home(props) {
   
   return (<>
   <Navbar user={user} />
+  <RestaurantList />
   </>)
 }
