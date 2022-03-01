@@ -1,26 +1,35 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { usePlacesWidget } from "react-google-autocomplete";
+import { LoadScript } from "@react-google-maps/api";
+import { Autocomplete } from "@react-google-maps/api";
 
+const libraries = ["places"];
 
 export default function SetAddress(props) {
-  const [address, setAddress] = useState({});
+  const [autoComplete, setAutoComplete] = useState({});
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const { ref: bootstrapRef } = usePlacesWidget({
-    apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    onPlaceSelected: (place) => console.log(place),
-    options: {
-      types: ['geocode', 'establishment'],
-      componentRestrictions: { country: "ca" },
+
+  const onLoad = (obj) => {
+    console.log("autocomplete: ", obj);
+    setAutoComplete(obj);
+  };
+
+  const onPlaceChanged = () => {
+    if (autoComplete !== null) {
+      console.log(autoComplete.getPlace());
+    } else {
+      console.log("Autocomplete is not loaded yet!");
     }
-  });
+  };
+
   return (
     <>
       <Button variant="outline-secondary" onClick={handleShow}>
@@ -29,29 +38,24 @@ export default function SetAddress(props) {
       </Button>
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Add Delivery Address</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label style={{ color: "black" }}>Bootstrap</Form.Label>
-              <Form.Control type="text" ref={bootstrapRef} />
-            </Form.Group>
-          </Form>
-          {/* <Autocomplete
-          style={{zIndex: 10000000000000}}
-            apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-            onPlaceSelected={(place) => {
-              console.log(place);
-            }}
-          /> */}
+          <LoadScript
+            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+            libraries={libraries}
+          >
+            <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+              <InputGroup className="mb-3">
+                <FormControl type="text" placeholder="Enter the address" />
+              </InputGroup>
+            </Autocomplete>
+            <></>
+          </LoadScript>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Save
           </Button>
         </Modal.Footer>
       </Modal>
