@@ -17,7 +17,8 @@ export default function SetAddress(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleSave = () => {
-    console.log(autoComplete.getPlace());
+    console.log('latitude', autoComplete.getPlace().geometry.location.lat());
+    console.log('longitude', autoComplete.getPlace().geometry.location.lng());
     setAddress(autoComplete.getPlace().formatted_address.split(",")[0]);
     setShow(false);
   };
