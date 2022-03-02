@@ -3,15 +3,10 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-import {
-  FaSearch,
-  FaMapMarkerAlt,
-  FaUserAlt,
-  FaShoppingCart
-} from "react-icons/fa";
+import { FaSearch, FaUserAlt, FaShoppingCart } from "react-icons/fa";
 import "./navbar.scss";
 import { useNavigate } from "react-router-dom";
-import SelectAddress from "./SelectAddress";
+import SetAddress from "./SetAddress";
 
 export default function Navbar(props) {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -27,21 +22,8 @@ export default function Navbar(props) {
       <h2>Lets Order</h2>
 
       <div className="user">
-        <div>
-          <DropdownButton
-            variant="outline-secondary"
-            title={
-              <>
-                <FaMapMarkerAlt />
-                <span className="spacer">Set Address</span>
-              </>
-            }
-            id="button-addon1"
-          >
-            <Dropdown.Item ><SelectAddress /></Dropdown.Item>
-            <Dropdown.Item >Add address</Dropdown.Item>
-          </DropdownButton>
-        </div>
+        <SetAddress />
+
         <InputGroup className="input spacer">
           <Button variant="outline-secondary" id="button-addon1">
             <FaSearch />
@@ -67,7 +49,7 @@ export default function Navbar(props) {
           variant="outline-secondary"
           title={<FaUserAlt />}
         >
-          <Dropdown.Item >Update profile</Dropdown.Item>
+          <Dropdown.Item>Update profile</Dropdown.Item>
           <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
         </DropdownButton>
       </div>
