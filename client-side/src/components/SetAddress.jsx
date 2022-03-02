@@ -11,30 +11,31 @@ const libraries = ["places"];
 
 export default function SetAddress(props) {
   const [autoComplete, setAutoComplete] = useState({});
-
+  const [address, setAddress] = useState("");
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleSave = () => {
+    console.log(autoComplete.getPlace());
+    setAddress(autoComplete.getPlace().formatted_address.split(",")[0]);
+    setShow(false);
+  };
 
   const onLoad = (obj) => {
     console.log("autocomplete: ", obj);
     setAutoComplete(obj);
   };
 
-  const onPlaceChanged = () => {
-    if (autoComplete !== null) {
-      console.log(autoComplete.getPlace());
-    } else {
-      console.log("Autocomplete is not loaded yet!");
-    }
-  };
-
   return (
     <>
       <Button variant="outline-secondary" onClick={handleShow}>
         <FaMapMarkerAlt />
-        <span className="spacer">Set Address</span>
+        {address ? (
+          <span className="spacer">{address}</span>
+        ) : (
+          <span className="spacer">Set Address</span>
+        )}
       </Button>
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
@@ -45,7 +46,7 @@ export default function SetAddress(props) {
             googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
             libraries={libraries}
           >
-            <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+            <Autocomplete onLoad={onLoad}>
               <InputGroup className="mb-3">
                 <FormControl type="text" placeholder="Enter the address" />
               </InputGroup>
@@ -54,7 +55,7 @@ export default function SetAddress(props) {
           </LoadScript>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleSave}>
             Save
           </Button>
         </Modal.Footer>
