@@ -24,10 +24,14 @@ CREATE TABLE users (
 
 CREATE TABLE addresses (
   id SERIAL PRIMARY KEY NOT NULL,
+  apt_number INTEGER,
   address_line1 VARCHAR(255) NOT NULL,
-  address_line2 VARCHAR(255) NOT NULL,
+  address_line2 VARCHAR(255),
   city VARCHAR(255) NOT NULL,
+  province VARCHAR(40) NOT NULL,
   postal_code VARCHAR(6) NOT NULL,
+  latitude DECIMAL NOT NULL,
+  longitude DECIMAL NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp
 );
@@ -44,8 +48,11 @@ CREATE TABLE restaurants (
   name VARCHAR(255),
   image_url VARCHAR(255) NOT NULL,
   address_line1 VARCHAR(255) NOT NULL,
-  address_line2 VARCHAR(255) NOT NULL,
+  address_line2 VARCHAR(255),
   city VARCHAR(255) NOT NULL,
+  province VARCHAR(40) NOT NULL,
+  latitude DECIMAL NOT NULL,
+  longitude DECIMAL NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT current_timestamp,
   postal_code VARCHAR(6) NOT NULL

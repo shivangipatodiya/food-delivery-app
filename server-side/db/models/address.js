@@ -18,6 +18,14 @@ const Address = db.define("address", {
     type: Sequelize.STRING,
     allowNull: false
   },
+  latitude: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
+  longitude: {
+    type: Sequelize.FLOAT,
+    allowNull: false
+  },
   createdAt: {
     field: "created_at",
     type: Sequelize.DATE

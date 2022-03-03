@@ -22,7 +22,7 @@ export default function Navbar(props) {
       <h2>Lets Order</h2>
 
       <div className="user">
-        <SetAddress />
+        <SetAddress setRestaurants={props.setRestaurants} />
 
         <InputGroup className="input spacer">
           <Button variant="outline-secondary" id="button-addon1">
