@@ -23,6 +23,10 @@ const apiHelpers = {
   async getRestaurants() {
     const response = await axios.get("/api/restaurants");
     return response.data;
+  },
+  async getNearbyRestaurants(data) {
+    const response = await axios.post("/api/nearbyRestaurants", data);
+    return response.data;
   }
 };
 

@@ -1,26 +1,13 @@
-import { useEffect, useState } from "react";
-import apiHelpers from "../helpers/apiHelpers";
 import RestaurantListItem from "./RestaurantListItem";
 import Row from 'react-bootstrap/Row';
 import './restaurantListItem.scss';
 
 export default function RestaurantList(props) {
-  const [restaurants, setRestaurants] = useState([]);
-  const fetchRestaurants = async () => {
-    try {
-      const restaurants = await apiHelpers.getRestaurants();
-      setRestaurants(restaurants);
-    } catch (err) {
-      console.log("Error fetching restaurants", err);
-    }
-  };
-  useEffect(() => {
-    fetchRestaurants();
-  }, []);
+  
 
   return (
     <Row md={4}>
-      {restaurants.map((restaurant) => {
+      {props.restaurants.map((restaurant) => {
         return (
           <RestaurantListItem
             key={restaurant.id}

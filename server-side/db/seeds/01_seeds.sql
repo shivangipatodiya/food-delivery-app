@@ -47,6 +47,7 @@ INSERT INTO
   addresses (
     address_line1,
     city,
+    province,
     postal_code,
     latitude,
     longitude
@@ -55,6 +56,7 @@ VALUES
   (
     '17143 69 Avenue NW',
     'Edmonton',
+    'Alberta',
     't5t2w6',
     53.503500,
     113.617660
@@ -62,6 +64,7 @@ VALUES
   (
     'Anthony Street',
     'Edmonton',
+    'Alberta',
     'v3c6r1',
     67.343324,
     193.325433
@@ -69,6 +72,7 @@ VALUES
   (
     'Rathburn Road',
     'Mississauga',
+    'Ontario',
     'l5b0g9',
     55.43432,
     121.454657
@@ -76,6 +80,7 @@ VALUES
   (
     'Bunny Dr',
     'London',
+    'Ontario',
     'l5h6n8',
     87.54335,
     112.323122
@@ -83,6 +88,7 @@ VALUES
   (
     'Harvey Street',
     'Toronto',
+    'Ontario',
     't4f1k9',
     45.34232,
     132.43344
@@ -103,6 +109,7 @@ INSERT INTO
     address_line1,
     address_line2,
     city,
+    province,
     postal_code,
     latitude,
     longitude
@@ -114,6 +121,7 @@ VALUES
     '900',
     'Rathburn Rd W',
     'Mississauga',
+    'Ontario',
     'L5C4L3',
     43.5790728,
     -79.660843
@@ -124,6 +132,7 @@ VALUES
     '17',
     'Tannery St',
     'Mississauga',
+    'Ontario',
     'L5M1V1',
     43.5812584,
     -79.7147008
@@ -134,6 +143,7 @@ VALUES
     '811',
     'Bovaird Dr W Unit 19 -20',
     'Brampton',
+    'Ontario',
     'L6X0T9',
     43.7059384,
     -79.788012
@@ -144,6 +154,7 @@ VALUES
     '418',
     '9261 34 Ave NW',
     'Edmonton',
+    'Alberta',
     'T6E5T5',
     53.464920,
     -113.473860
@@ -154,6 +165,7 @@ VALUES
     '9812',
     '6821 177 St NW',
     'Edmonton',
+    'Alberta',
     'T5T4K3',
     53.503380,
     -113.625430
@@ -164,6 +176,7 @@ VALUES
     '2232',
     '9189 25 Ave NW',
     'Edmonton',
+    'Alberta',
     'T6N1N2',
     53.453720,
     -113.470863
@@ -173,7 +186,8 @@ VALUES
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAdS3jWFISOycMfpgV0wTdgHTTBUIX-4u-iQ&usqp=CAU',
     '212',
     'Buckley Dr',
-    'St.John '' s',
+    'St.John'' s',
+    'Alberta',
     'T5T4J2',
     53.312443,
     -113.372351
@@ -183,7 +197,8 @@ VALUES
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAdS3jWFISOycMfpgV0wTdgHTTBUIX-4u-iQ&usqp=CAU',
     '8629',
     '112 St NW',
-    'St.John '' s',
+    'St.John'' s',
+    'Alberta',
     'T6G1K8',
     53.31219,
     -113.31141
@@ -194,16 +209,18 @@ VALUES
     '8882',
     '170 St NW',
     'Edmonton',
+    'Alberta',
     'T5T4M2',
     53.312443,
     -113.372351
   ),
   (
-    'Wendy '' s',
+    'Wendy''s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMLnr6trfdbxVaL_MddksXgzb6JAP5YFmnZQ&usqp=CAU',
     '7239',
     'Winterburn Road NW',
     'Edmonton',
+    'Alberta',
     'T7X3Y3',
     53.504900,
     -113.688595
@@ -214,6 +231,7 @@ VALUES
     '18411',
     'Stony Plain Rd',
     'Edmonton',
+    'Alberta',
     'T5S2X6',
     53.541294,
     -113.640996
@@ -224,6 +242,7 @@ VALUES
     '6819',
     '177 St NW',
     'Edmonton',
+    'Alberta',
     'T5T4K3',
     53.50332,
     -113.625432
@@ -234,6 +253,7 @@ VALUES
     '6921',
     '172 St NW',
     'Edmonton',
+    'Alberta',
     'T5T5Y1',
     53.5139296,
     -113.6184895
@@ -244,6 +264,7 @@ VALUES
     '10177',
     '107 St NW',
     'Edmonton',
+    'Alberta',
     'T5J1J5',
     53.5583174,
     -113.5047712
@@ -254,16 +275,18 @@ VALUES
     '5368',
     'Windermere Blvd NW',
     'Edmonton',
+    'Alberta',
     'T6W0L9',
     53.4352416,
     -113.6065164
   ),
   (
-    'Franco '' s',
+    'Franco''s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiyhAv8wlLw8TrKKqrw0z9PK5cwjrl6xm8A&usqp=CAU',
     '12881',
     '50 St NW',
     'Edmonton',
+    'Alberta',
     'T5A3P3',
     53.5888977,
     -113.4176373
