@@ -299,13 +299,13 @@ VALUES
     'veg.chowmein',
     'it is a stir - fried dish consisting of noodles, onions and other veggies, soy sauce, aromatics and spices',
     15,
-    5
+    1
   ),
   (
     'chicken noodles',
     'stir - fried noodles with onions and chicken, soy sauce, aromatics and spices',
     18,
-    5
+    1
   ),
   (
     'french fries',
@@ -315,15 +315,75 @@ VALUES
   ),
   (
     'french fries',
+    'crispy fried potato slices with sprinkled salt, herbs and pepper',
+    5,
+    6
+  ),
+  (
+    'french fries',
+    'crispy fried potato slices with sprinkled salt, herbs and pepper',
+    5,
+    7
+  ),
+  (
+    'french fries',
+    'crispy fried potato slices with sprinkled salt, herbs and pepper',
+    5,
+    8
+  ),
+  (
+    'french fries',
     'fried slices of potatoes',
     6.5,
-    4
+    16
   ),
   (
     'french fries',
     'fried potato slices with salt',
     8,
-    5
+    10
+  ),
+  (
+    'french fries',
+    'fried potato slices with salt',
+    8,
+    11
+  ),
+  (
+    'french fries',
+    'fried potato slices with salt',
+    8,
+    13
+  ),
+  (
+    'Alfredo pasta',
+    'Fusili baked with alfredo sauce and italian herbs',
+    16,
+    9
+  ),
+  (
+    'Alfredo pasta',
+    'Fusili baked with alfredo sauce and italian herbs served with fresh garlic bread',
+    18,
+    16
+  ),
+  (
+    'Chhole Puri',
+    'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
+    12,
+    3
+  ),
+  (
+    'Chhole Puri',
+    'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
+    11,
+    6
+  ),
+  (
+    'Chhole Puri',
+    'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
+    12.99,
+    14
   );
 
 INSERT INTO
