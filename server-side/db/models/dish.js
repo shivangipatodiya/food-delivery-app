@@ -14,6 +14,11 @@ const Dish = db.define("dish", {
     type: Sequelize.FLOAT,
     allowNull: false
   },
+  restaurantId: {
+    field: "restaurant_id",
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
   createdAt: {
     field: "created_at",
     type: Sequelize.DATE

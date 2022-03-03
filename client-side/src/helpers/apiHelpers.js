@@ -27,6 +27,10 @@ const apiHelpers = {
   async getNearbyRestaurants(data) {
     const response = await axios.post("/api/nearbyRestaurants", data);
     return response.data;
+  },
+  async getMenu(id) {
+    const response = await axios.get(`/api/menu/${id}`);
+    return response.data;
   }
 };
 

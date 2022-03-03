@@ -18,7 +18,11 @@ Cart.belongsTo(User);
 User.hasMany(Order);
 Order.belongsTo(User)
 Restaurant.hasMany(Dish);
-Dish.belongsTo(Restaurant);
+Dish.belongsTo(Restaurant, {
+  foreignKey: {
+    name: 'restaurantId'
+  }
+});
 
 module.exports = {
   User,

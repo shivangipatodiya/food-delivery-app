@@ -7,6 +7,7 @@ router.use("/register", require("./auth/register"));
 router.use("/user", require("./user"));
 router.use("/restaurants", require("./restaurants"));
 router.use("/nearbyRestaurants", require("./nearbyRestaurants"));
+router.use("/menu", require("./menu"));
 
 router.use((req, res, next) => {
   const error = new Error("Not Found");

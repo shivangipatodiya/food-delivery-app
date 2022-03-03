@@ -6,6 +6,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import PrivateRoute from "./PrivateRoute";
 import Home from "./components/Home";
+import Menu from "./components/Menu";
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/resetpassword/:token" element={<ResetPassword />} />
           <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+          <Route path="/:id" element={<PrivateRoute><Menu /></PrivateRoute>} />
         </Routes>
       </BrowserRouter>
     </>
