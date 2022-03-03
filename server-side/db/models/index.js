@@ -20,7 +20,7 @@ Order.belongsTo(User)
 Restaurant.hasMany(Dish);
 Dish.belongsTo(Restaurant, {
   foreignKey: {
-    name: 'restaurant_id'
+    name: 'restaurantId'
   }
 });
 
