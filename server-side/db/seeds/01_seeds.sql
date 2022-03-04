@@ -293,61 +293,84 @@ VALUES
   );
 
 INSERT INTO
-  dishes (name, description, price, restaurant_id)
+  dishes (name, description, price, type, restaurant_id)
 VALUES
   (
     'veg.chowmein',
     'it is a stir - fried dish consisting of noodles, onions and other veggies, soy sauce, aromatics and spices',
     15,
+    'noodles',
     1
   ),
   (
     'chicken noodles',
     'stir - fried noodles with onions and chicken, soy sauce, aromatics and spices',
     18,
+    'noodles',
     1
   ),
   (
     'french fries',
     'crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
+    'appetizers',
     1
   ),
   (
     'french fries',
     'crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
+    'appetizers',
     6
   ),
   (
     'french fries',
     'crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
+    'appetizers',
     7
   ),
   (
     'french fries',
     'crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
+    'appetizers',
     8
   ),
   (
     'french fries',
     'fried slices of potatoes',
     6.5,
+    'appetizers',
     16
   ),
   (
     'french fries',
     'fried potato slices with salt',
     8,
+    'appetizers',
     10
   ),
   (
-    'french fries',
-    'fried potato slices with salt',
-    8,
-    11
+    'CHOMA CHOMA',
+    'Thinly sliced beef short ribs, char grilled with tangy African spices',
+    18,
+    'appetizers',
+    14
+  ),
+  (
+    'CHILLI CHICKEN 65',
+    'An Indo Chinese delicacy, crispy chicken cubes tossed with onions & peppers',
+    15,
+    'appetizers',
+    14
+  ),
+  (
+    'MISHKAKI',
+    'An African specialty! cubes of beef on a stick, barbecued with spicy masala',
+    14,
+    'appetizers',
+    14
   ),
   (
     'french fries',
@@ -359,30 +382,105 @@ VALUES
     'Alfredo pasta',
     'Fusili baked with alfredo sauce and italian herbs',
     16,
+    'pasta',
     9
   ),
   (
     'Alfredo pasta',
     'Fusili baked with alfredo sauce and italian herbs served with fresh garlic bread',
     18,
+    'pasta',
     16
   ),
   (
     'Chhole Puri',
     'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
     12,
+    'curries',
     3
   ),
   (
     'Chhole Puri',
     'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
     11,
+    'curries',
     6
+  ),
+  (
+    'SHAHI PANEER AKBARI',
+    'Cottage paneer dish cooked in velvety tomato cream sauce, from the north east frontier',
+    19,
+    'curries',
+    14
+  ),
+  (
+    'BHINDI DO PIAZA',
+    'Home style Okra dish, cooked with onions, tomatoes, flavoured with turmeric and cumin',
+    17,
+    'curries',
+    14
+  ),
+  (
+    'PALAK PANEER',
+    'Spinach and cottage cheese – simple ingredients turn this curry into a magical dish',
+    17,
+    'curries',
+    14
+  ),
+  (
+    'CHANGEZI BOTI',
+    'Alberta beef sirloin marinated in a combination of freshly ground spices, perfectly grilled',
+    23,
+    'tandoor',
+    14
+  ),
+  (
+    'SMOKEY PANEER TIKKA',
+    'Cubes of cottage cheese, flavored with ginger garlic and herbs, immaculately grilled',
+    19,
+    'tandoor',
+    14
+  ),
+  (
+    'LAKHNAVI MUSHROOM',
+    'Button mushrooms cooked in tandoor with a blend of spices.',
+    18,
+    'tandoor',
+    14
+  ),
+  (
+    'TANDOORI MURGH',
+    'Half of spring chicken marinated in yoghurt and 21 spices, perfectly grilled in clay oven',
+    21,
+    'tandoor',
+    14
+  ),
+  (
+    'MANGO CREAM',
+    'Fresh mango pudding',
+    10,
+    'desserts',
+    14
+  ),
+  (
+    ' VEGETABLE SAMOSA',
+    'Crispy turnovers stuffed with potatoes and green peas',
+    10,
+    'appetizers',
+    14
+  ),
+  (
+    'CHOCOLATE CINNAMON NAAN',
+    'Naan bread with Belgium chocolate and cinnamon',
+    8,
+    'desserts',
+    14
   ),
   (
     'Chhole Puri',
     'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
     12.99,
+    'curries',
     14
   );
 
