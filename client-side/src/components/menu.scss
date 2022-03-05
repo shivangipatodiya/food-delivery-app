@@ -1,0 +1,27 @@
+.display-flex {
+  border-radius: 60px;
+    display: flex;
+    // -webkit-box-pack: justify;
+    justify-content: space-between;
+    // position: relative;
+    // top: 2px;
+    width: 130px;
+    height: 40px;
+    padding: 6px;
+    border: 1px solid #ebe5df;
+}
+
+// .quantity {
+//   margin-top: 5px;
+//   margin-right: 10px;
+//   margin-left: 10px;
+// }
+ .button {
+  height: 26px;
+  width: 26px;
+  border-radius: 40px;
+  font-size: 20px;
+  align-content: center;
+  border: 1px solid #ebe5df;
+
+ }
