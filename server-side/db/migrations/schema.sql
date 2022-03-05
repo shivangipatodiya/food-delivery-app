@@ -62,7 +62,6 @@ CREATE TABLE dishes (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(25) NOT NULL,
   description VARCHAR(400) NOT NULL,
-  image_url VARCHAR(255) NOT NULL,
   price INTEGER NOT NULL,
   type VARCHAR(30),
   restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,

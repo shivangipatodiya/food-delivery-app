@@ -1,26 +1,65 @@
+import { useState } from "react";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
-import "./restaurantListItem.scss";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "./menu.scss";
 
 export default function MenuItem(props) {
-  
+  const [modalShow, setModalShow] = useState(false);
+  const [itemQuantity, setItemQuantity] = useState(0);
+
   return (
-    <Card className="card" border="light">
-      {/* <Link to={"/" + props.id} > */}
+    <>
+      <Card className="card" border="light" onClick={() => setModalShow(true)}>
         <Card.Body>
           <h2>{props.name}</h2>
-          {/* <img
-            className="image"
-            height="150px"
-            src={props.image ? props.image : ""}
-            alt={props.name}
-          ></img> */}
-          <p>
-            {props.description}
-          </p>
+          <p>{props.description}</p>
           <p>{props.price}$</p>
         </Card.Body>
-      {/* </Link> */}
-    </Card>
+      </Card>
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        size="lg"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            {props.name}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            Spice level
+            <Form.Check type="radio" name="group1" label="🌶" />
+            <Form.Check type="radio" name="group1" label="🌶🌶" />
+            <Form.Check type="radio" name="group1" label="🌶🌶🌶" />
+            <div className="display-flex">
+              <Button
+                variant="outline-secondary"
+                className="button"
+                disabled={itemQuantity <= 1}
+                onClick={() => setItemQuantity(itemQuantity - 1)}
+              >
+                -
+              </Button>
+              <div className="quantity">{itemQuantity}</div>
+              <Button
+                variant="outline-secondary"
+                className="button"
+                disabled={itemQuantity >= props.product_quantity}
+                onClick={() => setItemQuantity(itemQuantity + 1)}
+              >
+                +
+              </Button>
+            </div>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
