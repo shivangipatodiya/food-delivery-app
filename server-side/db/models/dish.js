@@ -10,11 +10,11 @@ const Dish = db.define("dish", {
     type: Sequelize.STRING,
     allowNull: false
   },
-  // imageUrl: {
-  //   field: "image_url",
-  //   type: Sequelize.STRING,
-  //   allowNull: false
-  // },
+  imageUrl: {
+    field: "image_url",
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   price: {
     type: Sequelize.FLOAT,
     allowNull: false

@@ -5,10 +5,21 @@
     justify-content: space-between;
     // position: relative;
     // top: 2px;
-    width: 130px;
-    height: 40px;
+    width: 160px;
+    height: 60px;
     padding: 6px;
     border: 1px solid #ebe5df;
+    align-items: center;
+}
+.align-center {
+  // display: block;
+  padding-left: 220px;
+}
+.header {
+  background-color: #bebaba;
+  border: 1px solid #ebe5df;
+  width: 100%;
+  padding-left: 0.5rem;
 }
 
 // .quantity {
@@ -17,8 +28,8 @@
 //   margin-left: 10px;
 // }
  .button {
-  height: 26px;
-  width: 26px;
+  
+  // width: 26px;
   border-radius: 40px;
   font-size: 20px;
   align-content: center;
