@@ -5,15 +5,16 @@
     justify-content: space-between;
     // position: relative;
     // top: 2px;
-    width: 160px;
+    width: 150px;
     height: 60px;
-    padding: 6px;
+    padding: 10px;
     border: 1px solid #ebe5df;
     align-items: center;
 }
 .align-center {
-  // display: block;
-  padding-left: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header {
   background-color: #bebaba;
@@ -30,9 +31,9 @@
  .button {
   
   // width: 26px;
-  border-radius: 40px;
-  font-size: 20px;
+  border-radius: 50%;
+  //font-size: 20px;
   align-content: center;
-  border: 1px solid #ebe5df;
+  border: 0px solid #ebe5df;
 
  }
