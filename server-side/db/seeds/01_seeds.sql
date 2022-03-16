@@ -293,10 +293,11 @@ VALUES
   );
 
 INSERT INTO
-  dishes (name, description, price, type, restaurant_id)
+  dishes (name, image_url, description, price, type, restaurant_id)
 VALUES
   (
     'Veg.chowmein',
+    'https://greenbowl2soul.com/wp-content/uploads/2019/11/vegetable-chow-mein.jpg',
     'It is a stir - fried dish consisting of noodles, onions and other veggies, soy sauce, aromatics and spices',
     15,
     'Noodles',
@@ -304,6 +305,7 @@ VALUES
   ),
   (
     'Chicken noodles',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqm5gPQqZ5GlWbpZTMXK2rnJH13bipTk7Fwg&usqp=CAU',
     'Stir - fried noodles with onions and chicken, soy sauce, aromatics and spices',
     18,
     'Noodles',
@@ -311,6 +313,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
     'Appetizers',
@@ -318,6 +321,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
     'Appetizers',
@@ -325,6 +329,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
     'Appetizers',
@@ -332,6 +337,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Crispy fried potato slices with sprinkled salt, herbs and pepper',
     5,
     'Appetizers',
@@ -339,6 +345,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Fried slices of potatoes',
     6.5,
     'Appetizers',
@@ -346,6 +353,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Fried potato slices with salt',
     8,
     'Appetizers',
@@ -353,6 +361,7 @@ VALUES
   ),
   (
     'CHOMA CHOMA',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXOaSDwMA_KOxQSZeDWULRgTG5b6sygYHekw&usqp=CAU',
     'Thinly sliced beef short ribs, char grilled with tangy African spices',
     18,
     'Appetizers',
@@ -360,6 +369,7 @@ VALUES
   ),
   (
     'CHILLI CHICKEN 65',
+    'https://upload.wikimedia.org/wikipedia/commons/5/5d/Chicken_65_%28Dish%29.jpg',
     'An Indo Chinese delicacy, crispy chicken cubes tossed with onions & peppers',
     15,
     'Appetizers',
@@ -367,6 +377,7 @@ VALUES
   ),
   (
     'MISHKAKI',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTWjnbTeJPwiSzcIUwiobj-PkT5uE-9g5c0Q&usqp=CAU',
     'An African specialty! cubes of beef on a stick, barbecued with spicy masala',
     14,
     'Appetizers',
@@ -374,6 +385,7 @@ VALUES
   ),
   (
     'French fries',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcX88Su-HM05mjnbeG1Rd-L0Xo7cQv5ObQ&usqp=CAU',
     'Fried potato slices with salt',
     8,
     'Appetizers',
@@ -381,6 +393,7 @@ VALUES
   ),
   (
     'Alfredo pasta',
+    'https://www.tasteandtellblog.com/wp-content/uploads/2021/03/Easy-Alfredo-Sauce-1.jpg',
     'Fusili baked with alfredo sauce and italian herbs',
     16,
     'Pasta',
@@ -388,6 +401,7 @@ VALUES
   ),
   (
     'Alfredo pasta',
+    'https://www.tasteandtellblog.com/wp-content/uploads/2021/03/Easy-Alfredo-Sauce-1.jpg',
     'Fusili baked with alfredo sauce and italian herbs served with fresh garlic bread',
     18,
     'Pasta',
@@ -395,6 +409,7 @@ VALUES
   ),
   (
     'Chhole Puri',
+    'https://www.watscooking.com/images/dish/normal/Chole_Bhature.jpg',
     'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
     12,
     'Curries',
@@ -402,6 +417,7 @@ VALUES
   ),
   (
     'Chhole Puri',
+    'https://www.watscooking.com/images/dish/normal/Chole_Bhature.jpg',
     'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
     11,
     'Curries',
@@ -409,6 +425,7 @@ VALUES
   ),
   (
     'SHAHI PANEER AKBARI',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYtosVN-bI9LQYf2OeyUNrDJUh9h3-zsDmQg&usqp=CAU',
     'Cottage paneer dish cooked in velvety tomato cream sauce, from the north east frontier',
     19,
     'Curries',
@@ -416,6 +433,7 @@ VALUES
   ),
   (
     'BHINDI DO PIAZA',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDuLr51R4ob6xkFKlAURktyfZMYvJjm9bdWQ&usqp=CAU',
     'Home style Okra dish, cooked with onions, tomatoes, flavoured with turmeric and cumin',
     17,
     'Curries',
@@ -423,6 +441,7 @@ VALUES
   ),
   (
     'PALAK PANEER',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_azfgt3XIrmxFxKPJHGJJkvyWM9VjVdq4Mw&usqp=CAU',
     'Spinach and cottage cheese – simple ingredients turn this curry into a magical dish',
     17,
     'Curries',
@@ -430,6 +449,7 @@ VALUES
   ),
   (
     'CHANGEZI BOTI',
+    'https://cookwithfaiza.net/chicken-changezi-recipe-2/media/recipe_medium_files/1728868777_HYDERABADI_MURGH_KA_SALAN__COOK_WITH_FAIZA__.jpeg',
     'Alberta beef sirloin marinated in a combination of freshly ground spices, perfectly grilled',
     23,
     'Tandoor',
@@ -437,6 +457,7 @@ VALUES
   ),
   (
     'SMOKEY PANEER TIKKA',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg84YcO62mv8U4fh-iJaYTmt2j-veAH6XOxg&usqp=CAU',
     'Cubes of cottage cheese, flavored with ginger garlic and herbs, immaculately grilled',
     19,
     'Tandoor',
@@ -444,6 +465,7 @@ VALUES
   ),
   (
     'LAKHNAVI MUSHROOM',
+    'http://www.vegetariansdelight.com/wp-content/uploads/2016/08/DSC_0055_Main1_sq-1080x675.jpg',
     'Button mushrooms cooked in tandoor with a blend of spices.',
     18,
     'Tandoor',
@@ -451,6 +473,7 @@ VALUES
   ),
   (
     'TANDOORI MURGH',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXYZeXbXFLZirji14AOnPs_ozsXl8CnllFrg&usqp=CAU',
     'Half of spring chicken marinated in yoghurt and 21 spices, perfectly grilled in clay oven',
     21,
     'Tandoor',
@@ -458,6 +481,7 @@ VALUES
   ),
   (
     'MANGO CREAM',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS50zBRTc1XkhOC7c8fHnujC44nGhN6B_eH8g&usqp=CAU',
     'Fresh mango pudding',
     10,
     'Desserts',
@@ -465,6 +489,7 @@ VALUES
   ),
   (
     ' VEGETABLE SAMOSA',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_P_6DGZp5LsNtIxrX-gYvvJ2GsL8XXEir-w&usqp=CAU',
     'Crispy turnovers stuffed with potatoes and green peas',
     10,
     'Appetizers',
@@ -472,6 +497,7 @@ VALUES
   ),
   (
     'CHOCOLATE CINNAMON NAAN',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7lPiIUurf8inuVqVp3cdnUlJickhfaYkCHA&usqp=CAU',
     'Naan bread with Belgium chocolate and cinnamon',
     8,
     'Desserts',
@@ -479,6 +505,7 @@ VALUES
   ),
   (
     'Chhole Puri',
+    'https://www.watscooking.com/images/dish/normal/Chole_Bhature.jpg',
     'Chick peas cooked in onion and tomato gravy with indian spices served with puris',
     12.99,
     'Curries',
